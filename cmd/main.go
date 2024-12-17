@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"log"
 	"os"
@@ -13,19 +14,29 @@ import (
 )
 
 func main() {
+	// Add a flag for project directory
+	projectDirFlag := flag.String("project-dir", "", "Path to the project directory to scan")
+	flag.Parse()
+
+	var projectDir string
+	if *projectDirFlag != "" {
+		projectDir = *projectDirFlag
+	} else {
+		// fallback to current directory if not provided
+		dir, err := os.Getwd()
+		if err != nil {
+			log.Fatalf("Unable to get current directory: %v\n", err)
+		}
+		projectDir = dir
+	}
+
 	// Load configuration
 	cfg, err := config.LoadConfig("config.json")
 	if err != nil {
 		log.Fatalf("Error loading config: %v\n", err)
 	}
 
-	// Determine project directory (current directory)
-	projectDir, err := os.Getwd()
-	if err != nil {
-		log.Fatalf("Unable to get current directory: %v\n", err)
-	}
-
-	// Find top-level directories
+	// Find top-level directories in projectDir
 	dirs, err := topLevelDirectories(projectDir)
 	if err != nil {
 		log.Fatalf("Error listing directories: %v\n", err)

@@ -1,9 +1,5 @@
 {
     "ignore_patterns": [
-        "node_modules",
-        ".git",
-        ".vscode",
-        ".next",
         "*.png",
         "*.jpg",
         "*.jpeg",
