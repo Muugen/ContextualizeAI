@@ -1,0 +1,49 @@
+# -------------------------------
+# Go-related ignores
+# -------------------------------
+# Binaries
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Output of build tools
+bin/
+build/
+dist/
+
+# Cache and build files
+*.out
+*.test
+*.coverprofile
+
+# Go Modules
+go.sum
+vendor/
+
+# -------------------------------
+# Node.js / Next.js ignores
+# -------------------------------
+node_modules/
+.next/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# -------------------------------
+# Editor and system files
+# -------------------------------
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# -------------------------------
+# Others
+# -------------------------------
+*.txt
