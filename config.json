@@ -1,0 +1,18 @@
+{
+    "ignore_patterns": [
+        "node_modules",
+        ".git",
+        ".vscode",
+        ".next",
+        "*.png",
+        "*.jpg",
+        "*.jpeg",
+        "*.gif",
+        "*.ico",
+        "*.svg",
+        "*.zip",
+        "*.pdf",
+        "*.csv"
+    ],
+    "output_file": "get_code_context.txt"
+}
